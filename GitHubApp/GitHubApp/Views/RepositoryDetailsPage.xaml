@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GitHubApp.Views.RepositoryDetailsPage">
+  <ContentPage.Content>
+    <StackLayout>
+      <TableView x:Name="repositoryTableView">
+        <TableRoot>
+          <TableSection  Title="{Binding login}" >
+            <TextCell Text="Repository Name:" Detail="{Binding name}" />
+            <TextCell Text="Description:" Detail="{Binding description}" />
+            <TextCell Text="Date Created:" Detail="{Binding created_at}" />
+            <TextCell Text="Last Updated:" Detail="{Binding updated_at}" />
+          </TableSection>
+        </TableRoot>
+      </TableView>
+      <Button Text="Add User to Favorites" Clicked="OnUserClicked"></Button>
+      <Button Text="Add Repository to Favorites" Clicked="OnRepoClicked"></Button>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

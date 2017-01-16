@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GitHubApp.Views.UserSearchPage">
+  <StackLayout>
+    <SearchBar x:Name="userSearch" Placeholder="Search GitHub Users" SearchButtonPressed="getUserRepository"></SearchBar>
+    <ListView x:Name="repositoryListView" Header="Repositories" ItemsSource="{Binding fetchedRepository}" ItemTapped="showDetails">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <TextCell Text="{Binding name}" TextColor="White"></TextCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <Button x:Name="saveUserButton" IsVisible="False" Text="Add User to Favorites" Clicked="OnUserClicked"></Button>
+  </StackLayout>
+</ContentPage>
